@@ -28,16 +28,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="18dp"
-            android:layout_gravity="left"
-            android:text="Service Name"/>
+            android:hint="Service Name"
+            android:id="@+id/service"
+            android:layout_weight="0" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_weight="1"
+            />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
+            android:layout_weight="0"
+            android:inputType="number"
+            android:ems="10"
+            android:hint="Code"
             android:gravity="right"
-            android:textSize="18dp"
-            android:text="Code"/>
+            android:id="@+id/code"/>
 
     </LinearLayout>
 
@@ -46,18 +56,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:textSize="18dp"
-        android:text="Cost"/>
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Cost"
+        android:id="@+id/cost"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
         android:padding="10dp"
-        android:text="Description (Optional)"/>
+        android:hint="Description (Optional)"
+        android:id="@+id/description"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/submit"
         android:text="SUBMIT"/>
 </LinearLayout>
