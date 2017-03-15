@@ -15,7 +15,7 @@ public class   MainActivity extends AppCompatActivity {
     EditText service, code, cost,description;
     Button submit;
 
-    final ArrayList<CarShop> services = new ArrayList<>();
+    final static ArrayList<CarShop> services = new ArrayList<>();
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
