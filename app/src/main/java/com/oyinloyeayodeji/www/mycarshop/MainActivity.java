@@ -1,6 +1,7 @@
 package com.oyinloyeayodeji.www.mycarshop;
 
 import android.content.Intent;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,6 @@ public class   MainActivity extends AppCompatActivity {
         submit = (Button)findViewById(R.id.submit);
 
 
-
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,5 +45,6 @@ public class   MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
     }
 }

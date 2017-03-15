@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -15,6 +16,8 @@ public class MaintenanceActivity extends AppCompatActivity {
     ArrayList<CarShop> services;
 
     Button addService, pay;
+
+    int payment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,21 @@ public class MaintenanceActivity extends AppCompatActivity {
         addService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(MaintenanceActivity.this,MainActivity.class);
+                Intent i = new Intent(view.getContext() ,MainActivity.class);
+                startActivity(i);
+            }
+        });
+
+        pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                payment = 0;
+                for( CarShop service : services){
+                    payment += service.getmCost();
+                }
+//                Toast.makeText(MaintenanceActivity.this, "$" + payment, Toast.LENGTH_SHORT).show();
+                Intent i = new Intent(MaintenanceActivity.this, PayActivity.class);
+                i.putExtra("total", payment);
                 startActivity(i);
             }
         });
